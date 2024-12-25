@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title= `${title}`
+    body
+        .container
+            h1 Custom Object Form
+            a(href='/' class='btn btn-primary mb-3') Return to the homepage
+            br
+            br
+            form(action="/update-cobj", method="post")
+                input(type="text", name="id", placeholder="ID")
+                br 
+                br
+                input(type="text", name="name", placeholder="Name") 
+                br
+                br
+                input(type="text", name="email", placeholder="Email")
+                br
+                br
+                input(type="submit", value="Submit")

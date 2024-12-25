@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title Homepage
+        //- link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    body
+        .container
+            h1 Custom Object Table
+            a(href='/update-cobj' class='btn btn-primary mb-3') Add to this table
+            br
+            br
+            if data  && data.length
+                table(border='1', cellpadding='5', cellspacing='0')
+                    thead(style='background-color:rgb(221, 130, 233);')
+                        tr
+                            th ID
+                            th Email
+                            th Name
+                    tbody
+                        each record in data
+                            tr
+                                td= record.properties.id
+                                td= record.properties.email
+                                td= record.properties.name            
+            else
+                p No records found.
