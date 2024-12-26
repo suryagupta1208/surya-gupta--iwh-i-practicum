@@ -40,7 +40,7 @@ app.get('/update-cobj', (req, res) => {
 // TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
 
 // * Code for Route 3 goes here
-app.post('/update-cobj', (req, res) => {
+app.post('/update-cobj', async (req, res) => {
     const {id, name, email} = req.body
     try {
         const student = {
@@ -55,7 +55,7 @@ app.post('/update-cobj', (req, res) => {
             Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
             'Content-Type': 'application/json'
         };
-        axios.post(createStudent, student, { headers });
+        await axios.post(createStudent, student, { headers });
         res.redirect('/');
     } catch (error) {
         console.log(error);
